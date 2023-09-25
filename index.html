@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Code Checker</title>
+</head>
+<style>
+    .body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* background-color: aliceblue; */
+        background-image: url('images.jpeg');
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+         backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); /* Safari-specific prefix */
+
+    }
+    #text
+    {
+        font-size: 30px;
+        color: rgb(4, 4, 4);
+    }
+    #topLeftText
+     {
+            position:absolute; /* Set the position to absolute */
+            top: 0; /* Position from the top edge */
+            left: 3; /* Position from the left edge */
+            font-size: 20px; /* Adjust the font size as needed */
+            color: rgb(255, 0, 0); /* Text color */
+    }
+    .body > input 
+    {
+        height: 50px;
+        width: 500px;
+        font-size: 25px;
+        font-weight: bold;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+    .body > button 
+    {
+        height: 50px;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    button:hover
+    {
+        background-color: aquamarine;
+        color: rgb(76, 25, 138);
+    }
+</style>
+<body>
+    <div class="body">
+        <p id="text" >frjna albatal</p>
+        <p id="topLeftText">site dyal khalih 3ala llah</p>
+        <input type="text" id="codeInput" placeholder="Enter number" />
+        <button id="checkButton">Check Code</button>
+        <p id="output"></p>
+    </div>
+    <script>
+        const codeInput = document.getElementById('codeInput');
+        const checkButton = document.getElementById('checkButton');
+        const outputElement = document.getElementById('output');
+
+        function checkCode() 
+        {
+            const kk = codeInput.value;
+            
+            if (kk.includes("28") && kk.includes("9") && kk.includes("2022")) 
+            {
+                outputElement.textContent = "Good job, write the code on paper and head to agora";
+            } else {
+                outputElement.textContent = "Sorry, try again!";
+            }
+        }
+        checkButton.addEventListener('click', checkCode);
+    </script>
+</body>
+</html>
