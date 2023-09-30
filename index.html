@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret Code Checker</title>
+    <title>lba7t 3an ma3na l7ayat</title>
 </head>
 <style>
-    .body {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        /* background-color: aliceblue; */
+    *  {
+        padding: 0;
+        margin: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    body { 
         background-image: url('images.jpeg');
         background-position: center;
         background-attachment: fixed;
         background-size: cover;
         background-repeat: no-repeat;
-         backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px); /* Safari-specific prefix */
-
+    }
+    .body {
+        backdrop-filter: blur(3px);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
     #text
     {
@@ -37,49 +41,97 @@
     }
     .body > input 
     {
-        height: 50px;
+        height: 70px;
         width: 500px;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: bold;
         padding-right: 20px;
         padding-left: 20px;
         margin-bottom: 20px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
     }
     .body > button 
     {
-        height: 50px;
-        font-size: 25px;
+        height: 70px;
+        width: 540px;
+        font-size: 20px;
         font-weight: bold;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
         cursor: pointer;
+        background-color: green;
+        color: white;
     }
-    button:hover
-    {
-        background-color: aquamarine;
-        color: rgb(76, 25, 138);
+    .text {
+        font-size: 50px;
+        margin-bottom: 20px;
+        
     }
+    button {
+        height: 80px;
+        width: 500px;
+        font-size: 15px;
+    }
+    #output2 {
+        font-size: 30px;
+        margin-top: 20px;
+        color: red;
+        background-color: black;
+        padding: 20px;
+    }
+    #mySound {
+        /* display: none; */
+    }
+
 </style>
 <body>
     <div class="body">
-        <p id="text" >frjna albatal</p>
+        <p class="text" >Frjna albatal</p>
         <p id="topLeftText">site dyal khalih 3ala llah</p>
         <input type="text" id="codeInput" placeholder="Enter number" />
         <button id="checkButton">Check Code</button>
         <p id="output"></p>
+        <div id="output2"></div>
+        <!-- <audio controls id="mySound">
+            <source src="eh.m4a" type="audio/mp3">
+            </audio> -->
     </div>
     <script>
         const codeInput = document.getElementById('codeInput');
         const checkButton = document.getElementById('checkButton');
         const outputElement = document.getElementById('output');
-
+        const outputElement2 = document.getElementById('output2');
+        // let x = document.getElementById('mySound');
+        let memeAudio = new Audio();
         function checkCode() 
         {
             const kk = codeInput.value;
             
             if (kk.includes("28") && kk.includes("9") && kk.includes("2022")) 
             {
-                outputElement.textContent = "Good job, write the code on paper and head to agora";
+                memeAudio.src = "uwu.m4a";
+                memeAudio.play();
+                setTimeout(() => {
+                    window.location.href = "bal3arbi.html";
+                }, 2500);
             } else {
-                outputElement.textContent = "Sorry, try again!";
+                memeAudio.src = "eh.m4a";
+                memeAudio.play();
+                outputElement.innerHTML = "<img src='lemountassir.PNG' />'";
+                outputElement2.innerHTML = "hbt awld lhmqa endi, 3awd jrb";
+                
+                // <p class="text" >hbt awld lhmqa endi</p>
+                setTimeout(() => {
+                    outputElement.innerHTML = "";
+                    outputElement2.innerHTML = "";
+                    //add img tag
+                }, 3000);
             }
         }
         checkButton.addEventListener('click', checkCode);
